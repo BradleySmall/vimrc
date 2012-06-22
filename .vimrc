@@ -1,4 +1,5 @@
 " ~/.vimrc (configuration file for vim only)
+" new comment
 " skeletons -------------------------------------------{{{
 function! SKEL_spec()
 	0r /usr/share/vim/current/skeletons/skeleton.spec
