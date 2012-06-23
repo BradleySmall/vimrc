@@ -52,7 +52,16 @@ set shiftwidth=4
 set number
 set autowrite
 set autoindent		" always set autoindenting on
-
+if has ( "win32unix" ) 	
+	set shell=/bin/sh
+	set shellcmdflag=--login\ -c
+elseif has ( "unix" )
+	set shell=/bin/sh
+	set shellcmdflag=--login\ -c
+else
+	set shell=cmd.exe
+endif	
+	"#set shellxquote=\"
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
