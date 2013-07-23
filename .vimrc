@@ -38,55 +38,6 @@ filetype plugin on
 filetype indent on
 " }}}
 
-" Configuration settings ------------------{{{
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set backup		" keep a backup file
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-set tabstop=4
-set shiftwidth=4
-set number
-set autowrite
-set autoindent		" always set autoindenting on
-if has ( "win32unix" ) 	
-	set shell=/bin/sh
-	set shellcmdflag=--login\ -c
-elseif has ( "unix" )
-	set shell=/bin/sh
-	set shellcmdflag=--login\ -c
-else
-	set shell=cmd.exe
-endif	
-	"#set shellxquote=\"
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-color darkblue
-
-" start with file modification status
-set statusline=%m
-" then file name/path
-set statusline+=%f
-" some separation and the file type
-set statusline+=\ -\ FileType:\ %y
-" switch to the right side
-set statusline+=%=
-" put the current line
-set statusline+=%l
-" put the column and virtual colum prefaced by a comma
-set statusline+=,%c%V
-" followed by a slash and the total lines in the file
-set statusline+=/%L
-" }}}
-
 " Leader settings ------------------------{{{
 let mapleader = "\\"
 let maplocalleader = "\\"
@@ -162,6 +113,10 @@ augroup filetype_cpp
 	autocmd fileType cpp nnoremap <buffer> <localleader>' viw<esc>a'<esc>hbi'<esc>lel
 	autocmd fileType cpp vnoremap <buffer> <localleader>" <esc>`>a"<esc>`<i"<esc>
 	autocmd fileType cpp vnoremap <buffer> <localleader>' <esc>`>a'<esc>`<i'<esc>
+	autocmd FileType cpp nnoremap <buffer> [[ ?{<CR>w99[{
+	autocmd FileType cpp nnoremap <buffer> ][ /}<CR>b99]}
+	autocmd FileType cpp nnoremap <buffer> ]] j0[[%/{<CR>
+	autocmd FileType cpp nnoremap <buffer> [] k$][%?}<CR>
 augroup END
 " }}}
 
@@ -239,7 +194,7 @@ endif
 
 " MyDiff ----------------------------------------------------------{{{
 set diffexpr=MyDiff()
-function MyDiff()
+function! MyDiff()
   let opt = '-a --binary '
   if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
 
@@ -265,19 +220,111 @@ function MyDiff()
 endfunction
 "}}}
 
-" NEXT and LAST around and inside movements ----------------------{{{
-onoremap an( :<c-u>normal! f(va(<cr>
-onoremap al( :<c-u>normal! F)va(<cr>
-onoremap an{ :<c-u>normal! f{va{<cr>
-onoremap al{ :<c-u>normal! F}va{<cr>
+" Ctags stuff ----------------------------------------------------------{{{
+set tags=./tags;$HOME
+set tags+=~/.vim/tags/libc6-dev_tags
+set tags+=~/.vim/tags/cpp_tags
+set tags+=~/.vim/tags/cpp
+function! UpdateTags()
+  execute ":!ctags -R --languages=C++ --c++-kinds=+p --fields=+iaS --extra=+q ./"
+  echohl StatusLine | echo "C/C++ tag updated" | echohl None
+endfunction
+nnoremap <F8> :call UpdateTags()
+"}}}
 
-onoremap in( :<c-u>normal! f(vi(<cr>
-onoremap il( :<c-u>normal! F)vi(<cr>
-onoremap in{ :<c-u>normal! f{vi{<cr>
-onoremap il{ :<c-u>normal! F}vi{<cr>
-"onoremap in@ :<c-u>normal! f@?[^a-zA-Z0-9!#$%&'*+-/=?^_`{|}~.]vf@/[^a-zA-Z0-9!#$%&'*+-/=?^_`{|}~.]<cr>
-onoremap in@ :<c-u>execute "normal! :nohlsearch\r/[a-zA-Z0-9_.]\\+@[a-zA-Z0-9_.]\\+\r:nohlsearch\rv/[^a-zA-Z0-9_.@]\r"<cr>
+" Configuration settings ------------------{{{
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set backup		" keep a backup file
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+set tabstop=4
+set shiftwidth=4
+set number
+set autowrite
+set autoindent		" always set autoindenting on
+set wrap!
+if has ( "win32unix" ) 	
+	set shell=/bin/bash
+	set shellcmdflag=--login\ -c
+elseif has ( "unix" )
+	set shell=/bin/bash
+	set shellcmdflag=--login\ -c
+else
+	set shell=cmd.exe
+endif	
+	"#set shellxquote=\"
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+color darkblue
+
+set guifont=DejaVu\ Sans\ Mono\ 16
+" ~/.vimrc ends here
+
+
+" start with file modification status
+set statusline=%m
+" then file name/path
+set statusline+=%f
+" some separation and the file type
+set statusline+=\ -\ FileType:\ %y
+" switch to the right side
+set statusline+=%=
+" put the current line
+set statusline+=%l
+" put the column and virtual colum prefaced by a comma
+set statusline+=,%c%V
+" followed by a slash and the total lines in the file
+set statusline+=/%L
 " }}}
 
+" swap file stuff --------------------------------------------------{{{
+" Save your backups to a less annoying place than the current directory.
+" If you have .vim-backup in the current directory, it'll use that.
+" Otherwise it saves it to ~/.vim/backup or . if all else fails.
+if isdirectory($HOME . '/.vim/backup') == 0
+  :silent !mkdir -p ~/.vim/backup >/dev/null 2>&1
+endif
+set backupdir-=.
+set backupdir+=.
+set backupdir-=~/
+set backupdir^=~/.vim/backup/
+set backupdir^=./.vim-backup/
+set backup
 
-" ~/.vimrc ends here
+" Save your swp files to a less annoying place than the current directory.
+" If you have .vim-swap in the current directory, it'll use that.
+" Otherwise it saves it to ~/.vim/swap, ~/tmp or .
+if isdirectory($HOME . '/.vim/swap') == 0
+  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
+endif
+set directory=./.vim-swap//
+set directory+=~/.vim/swap//
+set directory+=~/tmp//
+set directory+=.
+
+" viminfo stores the the state of your previous editing session
+set viminfo+=n~/.vim/viminfo
+
+if exists("+undofile")
+  " undofile - This allows you to use undos after exiting and restarting
+  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
+  " :help undo-persistence
+  " This is only present in 7.3+
+  if isdirectory($HOME . '/.vim/undo') == 0
+    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+  endif
+  set undodir=./.vim-undo//
+  set undodir+=~/.vim/undo//
+  set undofile
+endif
+"}}}
+
