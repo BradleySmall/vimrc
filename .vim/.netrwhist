@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='ftp://u50374033@bradleysmall.com///'
+let g:netrw_dirhist_2='/var/www'
+let g:netrw_dirhist_3='ftp://u50374033@bradleysmall.com//'
+let g:netrw_dirhist_4='ftp://u50374033@bradleysmall.com//toolsforlocksmiths/'
+let g:netrw_dirhist_5='ftp://u50374033@bradleysmall.com//'
+let g:netrw_dirhist_6='ftp://u50374033@bradleysmall.com//toolsforlocksmiths/'
