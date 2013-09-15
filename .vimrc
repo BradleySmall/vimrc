@@ -243,6 +243,7 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set number
 set autowrite
 set autoindent		" always set autoindenting on
@@ -267,8 +268,6 @@ inoremap <C-U> <C-G>u<C-U>
 color darkblue
 
 set guifont=DejaVu\ Sans\ Mono\ 16
-" ~/.vimrc ends here
-
 
 " start with file modification status
 set statusline=%m
@@ -298,7 +297,6 @@ set backupdir+=.
 set backupdir-=~/
 set backupdir^=~/.vim/backup/
 set backupdir^=./.vim-backup/
-set backup
 
 " Save your swp files to a less annoying place than the current directory.
 " If you have .vim-swap in the current directory, it'll use that.
@@ -328,3 +326,4 @@ if exists("+undofile")
 endif
 "}}}
 
+" ~/.vimrc ends here
