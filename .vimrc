@@ -53,6 +53,8 @@ nnoremap <leader>_ ddkPj
 nnoremap <leader>ev :split $MYVIMRC<cr>
 " reread (source) the current _vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
+"change directory to that of current file
+nnoremap <leader>cd :cd %:p:h<CR>
 " }}}
 
 " enclose in quote or single quotes -------------------{{{
@@ -254,6 +256,7 @@ if has ( "win32unix" )
 elseif has ( "unix" )
 	set shell=/bin/bash
 	set shellcmdflag=--login\ -c
+	set path=.,,/usr/include,./inc,../inc,./include,../include,~/include,inc,include
 else
 	set shell=cmd.exe
 endif	
@@ -297,6 +300,7 @@ set backupdir+=.
 set backupdir-=~/
 set backupdir^=~/.vim/backup/
 set backupdir^=./.vim-backup/
+set backup
 
 " Save your swp files to a less annoying place than the current directory.
 " If you have .vim-swap in the current directory, it'll use that.
@@ -326,4 +330,6 @@ if exists("+undofile")
 endif
 "}}}
 
-" ~/.vimrc ends here
+" sudo writing -------------------------------------------------{{{
+cmap w!! w !sudo tee % > /dev/null 
+"}}}
