@@ -243,12 +243,13 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-set tabstop=4
-set shiftwidth=4
+set tabstop=3
+set shiftwidth=3
 set expandtab
 set number
 set autowrite
 set autoindent		" always set autoindenting on
+set textwidth=80
 set wrap!
 if has ( "win32unix" ) 	
 	set shell=/bin/bash
@@ -268,7 +269,7 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-color darkblue
+color delek
 
 set guifont=DejaVu\ Sans\ Mono\ 16
 
