@@ -104,9 +104,30 @@ augroup filetype_python
 augroup END
 " }}}
 
+" C file settings ---------------------------------{{{
+augroup filetype_c
+	autocmd!
+   autocmd Filetype c setlocal textwidth=80
+   autocmd Filetype c setlocal colorcolumn=80
+	autocmd FileType c nnoremap <buffer> <localleader>c I//
+	autocmd FileType c vnoremap <buffer> <localleader>c I//
+	autocmd fileType c nnoremap <buffer> <localleader>/ I/*<esc>A*/<esc>j^
+	autocmd fileType c vnoremap <buffer> <localleader>/ <esc>`>a*/<esc>`<i/*<esc>
+	autocmd fileType c nnoremap <buffer> <localleader>" viw<esc>a"<esc>hbi"<esc>lel
+	autocmd fileType c nnoremap <buffer> <localleader>' viw<esc>a'<esc>hbi'<esc>lel
+	autocmd fileType c vnoremap <buffer> <localleader>" <esc>`>a"<esc>`<i"<esc>
+	autocmd fileType c vnoremap <buffer> <localleader>' <esc>`>a'<esc>`<i'<esc>
+	autocmd FileType c nnoremap <buffer> [[ ?{<CR>w99[{
+	autocmd FileType c nnoremap <buffer> ][ /}<CR>b99]}
+	autocmd FileType c nnoremap <buffer> ]] j0[[%/{<CR>
+	autocmd FileType c nnoremap <buffer> [] k$][%?}<CR>
+augroup END
+" }}}
 " CPP file settings ---------------------------------{{{
 augroup filetype_cpp
 	autocmd!
+   autocmd Filetype cpp setlocal textwidth=80
+   autocmd Filetype cpp setlocal colorcolumn=80
 	autocmd FileType cpp nnoremap <buffer> <localleader>c I//
 	autocmd FileType cpp vnoremap <buffer> <localleader>c I//
 	autocmd fileType cpp nnoremap <buffer> <localleader>/ I/*<esc>A*/<esc>j^
@@ -136,6 +157,15 @@ augroup filetype_html
 	autocmd BufWrite,BufRead *.html setlocal nowrap
 augroup END
 " }}}
+
+" Json file settings ---------------------------------{{{
+" augroup filetype_json
+"    autocmd!
+"    autocmd BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
+"    autocmd Syntax json source $HOME/.vim/syntax/json.vim
+" augroup END
+"au FileType json command -range=% -nargs=* Tidy <line1>,<line2>! json_xs -f json -t json-pretty
+"}}}
 
 " Spec file settings ---------------------------------{{{
 augroup FileType_spec
@@ -238,10 +268,10 @@ nnoremap <F8> :call UpdateTags()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set backup		" keep a backup file
+set backup		   " keep a backup file
 set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+set ruler		   " show the cursor position all the time
+set showcmd		   " display incomplete commands
 set incsearch		" do incremental searching
 set tabstop=3
 set shiftwidth=3
@@ -249,8 +279,8 @@ set expandtab
 set number
 set autowrite
 set autoindent		" always set autoindenting on
-set textwidth=80
 set wrap!
+
 if has ( "win32unix" ) 	
 	set shell=/bin/bash
 	set shellcmdflag=--login\ -c
@@ -268,8 +298,6 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-
-color delek
 
 set guifont=DejaVu\ Sans\ Mono\ 16
 
@@ -334,3 +362,13 @@ endif
 " sudo writing -------------------------------------------------{{{
 cmap w!! w !sudo tee % > /dev/null 
 "}}}
+
+syntax enable
+"if has('gui_running')
+"    set background=light
+"else
+"   let g:solarized_termcolors=16
+"   set background=light
+"endif
+"set background=dark
+"colorscheme solarized
