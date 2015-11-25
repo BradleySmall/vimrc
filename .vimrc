@@ -69,11 +69,6 @@ inoremap kj <esc>
 inoremap jk <esc>
 " }}}
 
-" new HOME and END keys --------------------------------{{{
-nnoremap L $
-nnoremap H ^
-" }}}
-
 " NEXT and LAST around and inside movements ----------------------{{{
 onoremap an( :<c-u>normal! f(va(<cr>
 onoremap al( :<c-u>normal! F)va(<cr>
@@ -121,6 +116,7 @@ augroup filetype_c
 	autocmd FileType c nnoremap <buffer> ][ /}<CR>b99]}
 	autocmd FileType c nnoremap <buffer> ]] j0[[%/{<CR>
 	autocmd FileType c nnoremap <buffer> [] k$][%?}<CR>
+   autocmd BufNewFile *.c 0r ~/.vim/skel/c.skel
 augroup END
 " }}}
 " CPP file settings ---------------------------------{{{
@@ -140,6 +136,7 @@ augroup filetype_cpp
 	autocmd FileType cpp nnoremap <buffer> ][ /}<CR>b99]}
 	autocmd FileType cpp nnoremap <buffer> ]] j0[[%/{<CR>
 	autocmd FileType cpp nnoremap <buffer> [] k$][%?}<CR>
+   autocmd BufNewFile *.cpp 0r ~/.vim/skel/cpp.skel
 augroup END
 " }}}
 
@@ -372,3 +369,13 @@ syntax enable
 "endif
 "set background=dark
 "colorscheme solarized
+
+"custom shortcuts
+"tabs
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-Left> <Esc> :tabprevious<CR>i
+inoremap <C-Right><Esc> :tabnext<CR>i
+inoremap <C-t> <Esc> :tabnew<CR>
+set clipboard=unnamedplus,unnamed
