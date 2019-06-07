@@ -1,0 +1,18 @@
+[submodule ".vim/pack/mypackages/start/lorumipsum"]
+	path = .vim/pack/mypackages/start/lorumipsum
+	url = https://github.com/vim-scripts/loremipsum.git
+[submodule "pack/mypackages/start/emmet"]
+	path = pack/mypackages/start/emmet
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "pack/mypackages/start/vim-closetag"]
+	path = pack/mypackages/start/vim-closetag
+	url = https://github.com/alvan/vim-closetag
+[submodule "pack/mypackages/start/powerline"]
+	path = pack/mypackages/start/powerline
+	url = https://github.com/powerline/powerline.git
+[submodule ".vim/pack/mypackages/start/vim-closetag"]
+	path = .vim/pack/mypackages/start/vim-closetag
+	url = https://github.com/alvan/vim-closetag
+[submodule ".vim/pack/mypackages/start/emmet"]
+	path = .vim/pack/mypackages/start/emmet
+	url = https://github.com/mattn/emmet-vim.git

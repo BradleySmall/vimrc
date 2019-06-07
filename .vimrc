@@ -241,12 +241,6 @@ augroup FileType_spec
 augroup END
 " }}}
 
-" Pathogen settings ----------------------------------------------------{{{
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-"}}}
-
 " Extra Terminal Stuff ----------------------------- {{{
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
