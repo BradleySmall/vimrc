@@ -31,3 +31,6 @@
 [submodule ".vim/pack/plugins/start/vimwiki"]
 	path = .vim/pack/plugins/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule ".vim/pack/plugins/start/indentpython"]
+	path = .vim/pack/plugins/start/indentpython
+	url = https://github.com/vim-scripts/indentpython.vim.git

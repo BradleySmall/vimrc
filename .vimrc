@@ -156,7 +156,8 @@ augroup END
 " Python file settings ------------------------------{{{
 augroup filetype_python
 	autocmd FileType python     nnoremap <buffer> <localleader>c I#
-   autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
+   autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix foldmethod=indent foldlevel=99
+   autocmd FileType python nnoremap <space> za
    autocmd BufNewFile *.py 0r ~/.vim/skel/py.skel
 augroup END
 " }}}
