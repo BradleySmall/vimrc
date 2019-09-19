@@ -28,3 +28,6 @@
 [submodule ".vim/pack/plugins/start/loremipsum"]
 	path = .vim/pack/plugins/start/loremipsum
 	url = https://github.com/vim-scripts/loremipsum.git
+[submodule ".vim/pack/plugins/start/vimwiki"]
+	path = .vim/pack/plugins/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
