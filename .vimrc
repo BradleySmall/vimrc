@@ -156,6 +156,7 @@ augroup END
 " Python file settings ------------------------------{{{
 augroup filetype_python
 	autocmd FileType python     nnoremap <buffer> <localleader>c I#
+   autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 augroup END
 " }}}
 
