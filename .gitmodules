@@ -34,3 +34,6 @@
 [submodule ".vim/pack/plugins/start/indentpython"]
 	path = .vim/pack/plugins/start/indentpython
 	url = https://github.com/vim-scripts/indentpython.vim.git
+[submodule ".vim/pack/plugins/start/simplyfold"]
+	path = .vim/pack/plugins/start/simplyfold
+	url = https://github.com/tmhedberg/SimpylFold.git
