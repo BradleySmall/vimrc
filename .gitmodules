@@ -37,3 +37,6 @@
 [submodule ".vim/pack/plugins/start/simplyfold"]
 	path = .vim/pack/plugins/start/simplyfold
 	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule ".vim/pack/plugins/start/syntastic"]
+	path = .vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
