@@ -6,10 +6,11 @@ My .vimrc
 Do all git and git submodule work from ~/vimrc
 
 Installing a plugin:
-git submodule add https://github.com/<repo>/<plugin>
-git .vim/pack/plugins/start/<pluginname>
-git add .
-git commit -m "installing <pluginname> as submodule"
+git submodule add https://github.com/<repo>/<plugin> 
+git .vim/pack/plugins/start/<pluginname> 
+git add . 
+git commit -m "installing <pluginname> as submodule" 
+
 
 Update all the plugins:
 git submodule foreach git pull origin master
