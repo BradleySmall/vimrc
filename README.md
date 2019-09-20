@@ -24,6 +24,6 @@ cd .vim/pack/plugins/start/<pluginname>
 git pull origin master
 
 Putting it on new machine:
-git clone --recursive https://github.com/username/reponame.git
+git clone --recursive https://github.com/<username>/<reponame>.git
 
 instructions based on readme from : https://gist.github.com/manasthakur/d4dc9a610884c60d944a4dd97f0b3560
