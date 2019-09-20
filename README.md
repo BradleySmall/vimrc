@@ -6,7 +6,8 @@ My .vimrc
 Do all git and git submodule work from ~/vimrc
 
 Installing a plugin:
-git submodule add https://github.com/<repo>/<plugin>.git .vim/pack/plugins/start/<pluginname>
+git submodule add https://github.com/<repo>/<plugin>
+git .vim/pack/plugins/start/<pluginname>
 git add .
 git commit -m "installing <pluginname> as submodule"
 
@@ -26,4 +27,8 @@ git pull origin master
 Putting it on new machine:
 git clone --recursive https://github.com/<username>/<reponame>.git
 
-instructions based on readme from : https://gist.github.com/manasthakur/d4dc9a610884c60d944a4dd97f0b3560
+On a working machine, to get updates:
+git pull
+git submodule update
+
+instructions based on readme from : https://gist.github.com/keeganstreet/923900/13504e9b05cb131d55d8db817f093045b834d8de
