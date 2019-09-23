@@ -30,8 +30,5 @@ autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 
-" Skeleton for new empty file
-autocmd BufNewFile *.py,*.pyw 0r ~/.vim/skel/py.skel
-
 " Remove trailing whitespace 
 autocmd BufWritePre *.py,*.pyw %s/\s\+$//e
