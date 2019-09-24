@@ -23,6 +23,8 @@ let g:html_indent_style1 = "inc"
 let g:html_indent_script1 = "inc"
 let g:html_indent_inctags = "style"
 
+let g:syntastic_python_checkers = ['prospector']
+
 if has ( "win32unix" ) 	
 	set shell=/bin/bash
 	set shellcmdflag=--login\ -c

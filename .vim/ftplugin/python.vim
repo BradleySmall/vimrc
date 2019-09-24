@@ -31,4 +31,4 @@ autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 
 " Remove trailing whitespace 
-autocmd BufWritePre *.py,*.pyw %s/\s\+$//e
+autocmd BufWritePre *.py,*.pyw normal m`:%s/\s\+$//e ``
