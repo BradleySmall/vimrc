@@ -15,6 +15,7 @@ syntax on
 
 nmap <F5> :w <CR> :!clear; python % <CR>
 nmap <F6> :w <CR> :!python % 
+nmap <F7> :w <CR> :SyntasticCheck <CR>
 nnoremap <space> za
 nnoremap <buffer> <localleader>c I#
 
@@ -31,4 +32,4 @@ autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 
 " Remove trailing whitespace 
-autocmd BufWritePre *.py,*.pyw normal m`:%s/\s\+$//e ``
+autocmd BufWritePre *.py,*.pyw %s/\s\+$//e
