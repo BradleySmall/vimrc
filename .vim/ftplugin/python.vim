@@ -13,9 +13,10 @@ setlocal textwidth=79
 setlocal colorcolumn=80
 syntax on
 
-nmap <F5> :w <CR> :!clear; python % <CR>
-nmap <F6> :w <CR> :!python % 
-nmap <F7> :w <CR> :SyntasticCheck <CR>
+nmap <F5> :w<CR>:!clear;python %<CR>
+nmap <F6> :w<CR>:!python % 
+nmap <F7> :w<CR>:SyntasticCheck<CR>
+
 nnoremap <space> za
 nnoremap <buffer> <localleader>c I#
 
