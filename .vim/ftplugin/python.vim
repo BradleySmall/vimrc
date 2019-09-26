@@ -13,8 +13,8 @@ setlocal textwidth=79
 setlocal colorcolumn=80
 syntax on
 
-nmap <F5> :w <CR> :!clear; python % <CR>
-nmap <F6> :w <CR> :!python % 
+nmap <F5> :w<CR>:!clear;python %<CR>
+nmap <F6> :w<CR>:!python % 
 nnoremap <space> za
 nnoremap <buffer> <localleader>c I#
 
@@ -31,4 +31,4 @@ autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 
 " Remove trailing whitespace 
-autocmd BufWritePre *.py,*.pyw normal m`:%s/\s\+$//e ``
+autocmd BufWritePre *.py,*.pyw %s/\s\+$//e

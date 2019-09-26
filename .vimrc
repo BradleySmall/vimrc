@@ -358,10 +358,10 @@ syntax enable
 
 "custom shortcuts
 "tabs
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <C-t> :tabnew<CR>
-inoremap <C-Left> <Esc> :tabprevious<CR>i
-inoremap <C-Right><Esc> :tabnext<CR>i
-inoremap <C-t> <Esc> :tabnew<CR>
+" nnoremap <C-Left> :tabprevious<CR>
+" nnoremap <C-Right> :tabnext<CR>
+" nnoremap <C-t> :tabnew<CR>
+" inoremap <C-Left> <Esc> :tabprevious<CR>i
+" inoremap <C-Right><Esc> :tabnext<CR>i
+" inoremap <C-t> <Esc> :tabnew<CR>
 set clipboard=unnamedplus,unnamed
