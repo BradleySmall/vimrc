@@ -365,6 +365,7 @@ syntax enable
 " inoremap <C-Right><Esc> :tabnext<CR>i
 " inoremap <C-t> <Esc> :tabnew<CR>
 
-set list listchars=tab:»»,trail:•,precedes:←,extends:→,space:·,eol:¶
+set list listchars=tab:»»,trail:•,precedes:←,extends:→,space:\ ,eol:¶
+" set list listchars=tab:»»,trail:•,precedes:←,extends:→,space:·,eol:¶
 
 set clipboard=unnamedplus,unnamed
