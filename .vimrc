@@ -368,4 +368,5 @@ syntax enable
 " set list listchars=tab:»»,trail:•,precedes:←,extends:→,space:·,eol:¶
 set list listchars=tab:»»,trail:•,precedes:←,extends:→,space:\ ,eol:¶
 
+
 set clipboard=unnamedplus,unnamed
