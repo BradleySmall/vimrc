@@ -43,3 +43,6 @@
 [submodule ".vim/pack/plugins/start/fugitive-gitlab"]
 	path = .vim/pack/plugins/start/fugitive-gitlab
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
+[submodule ".vim/pack/plugins/start/vim-surround"]
+	path = .vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git

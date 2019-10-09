@@ -46,19 +46,20 @@ inoremap <C-U> <C-G>u<C-U>
 set guifont=DejaVu\ Sans\ Mono\ 12
 
 " start with file modification status
-set statusline=%m
-" then file name/path
-set statusline+=%f
-" some separation and the file type
-set statusline+=\ -\ FileType:\ %y
-" switch to the right side
-set statusline+=%=
-" put the current line
-set statusline+=%l
-" put the column and virtual colum prefaced by a comma
-set statusline+=,%c%V
-" followed by a slash and the total lines in the file
-set statusline+=/%L
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+" set statusline=%m
+" " then file name/path
+" set statusline+=%f
+" " some separation and the file type
+" set statusline+=\ -\ FileType:\ %y
+" " switch to the right side
+" set statusline+=%=
+" " put the current line
+" set statusline+=%l
+" " put the column and virtual colum prefaced by a comma
+" set statusline+=,%c%V
+" " followed by a slash and the total lines in the file
+" set statusline+=/%L
 " }}}
 
 " skeletons -------------------------------------------{{{
@@ -370,3 +371,4 @@ syntax enable
 set list listchars=tab:»»,trail:•,precedes:←,extends:→,space:\ ,eol:¶
 
 set clipboard=unnamedplus,unnamed
+let g:fugitive_gitlab_domains = ['https://git.qoto.org']
