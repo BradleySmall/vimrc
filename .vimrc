@@ -290,7 +290,7 @@ endif
 " }}}
 
 " Ctags stuff ----------------------------------------------------------{{{
-set tags+=.git/tags;/
+set tags+=.tags;/
 " BMS set tags=./tags;$HOME
 " BMS set tags+=~/.vim/tags/libc6-dev_tags
 " BMS set tags+=~/.vim/tags/cpp_tags
