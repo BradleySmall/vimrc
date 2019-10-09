@@ -40,3 +40,6 @@
 [submodule ".vim/pack/plugins/start/syntastic"]
 	path = .vim/pack/plugins/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule ".vim/pack/plugins/start/fugitive-gitlab"]
+	path = .vim/pack/plugins/start/fugitive-gitlab
+	url = https://github.com/shumphrey/fugitive-gitlab.vim.git

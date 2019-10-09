@@ -289,10 +289,11 @@ endif
 " }}}
 
 " Ctags stuff ----------------------------------------------------------{{{
-set tags=./tags;$HOME
-set tags+=~/.vim/tags/libc6-dev_tags
-set tags+=~/.vim/tags/cpp_tags
-set tags+=~/.vim/tags/cpp
+set tags+=.git/tags;/
+" BMS set tags=./tags;$HOME
+" BMS set tags+=~/.vim/tags/libc6-dev_tags
+" BMS set tags+=~/.vim/tags/cpp_tags
+" BMS set tags+=~/.vim/tags/cpp
 function! UpdateTags()
   execute ":!ctags -R --languages=C++ --c++-kinds=+p --fields=+iaS --extra=+q ./"
   echohl StatusLine | echo "C/C++ tag updated" | echohl None
