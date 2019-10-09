@@ -8,8 +8,7 @@ Do all git and git submodule work from ~/vimrc
 Installing a plugin:
 
 ```
-git submodule add https://github.com/<repo>/<plugin>
-git .vim/pack/plugins/start/<pluginname>
+git submodule add https://github.com/<repo>/<plugin> .vim/pack/plugins/start/<pluginname>
 git add .
 git commit -m "installing <pluginname> as submodule"
 ```
