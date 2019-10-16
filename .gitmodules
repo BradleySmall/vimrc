@@ -49,3 +49,6 @@
 [submodule ".vim/pack/plugins/start/vim-rhubarb"]
 	path = .vim/pack/plugins/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule ".vim/pack/plugins/start/tender"]
+	path = .vim/pack/plugins/start/tender
+	url = https://github.com/jacoborus/tender.vim.git
