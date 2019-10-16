@@ -13,12 +13,14 @@ setlocal textwidth=79
 setlocal colorcolumn=80
 syntax on
 
+imap <F5> <esc>:w<CR>:!clear;python3 %<CR>
 nmap <F5> :w<CR>:!clear;python3 %<CR>
 nmap <F6> :w<CR>:!python3 % 
 nmap <F7> :w<CR>:SyntasticCheck<CR>
 
 nnoremap <space> za
-nnoremap <buffer> <localleader>c I#
+vnoremap <buffer> <localleader>cc :s/^/#<cr>
+vnoremap <buffer> <localleader>cu :s/^#//<cr>
 
 " set foldmethod=indent
 let python_highlight_all=1

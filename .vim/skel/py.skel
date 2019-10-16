@@ -1,6 +1,6 @@
 """ Document Comment """
 def main():
-   """ Function Comment """
+    """ Function Comment """
     pass
 
 
