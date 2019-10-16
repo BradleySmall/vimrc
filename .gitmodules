@@ -49,3 +49,6 @@
 [submodule ".vim/pack/plugins/start/vim-rhubarb"]
 	path = .vim/pack/plugins/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule ".vim/pack/plugins/start/vim-solarized8"]
+	path = .vim/pack/plugins/start/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git

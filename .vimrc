@@ -18,6 +18,7 @@ set autoindent		" always set autoindenting on
 set smartindent
 set cindent
 set wrap!
+set termguicolors
 
 let g:html_indent_style1 = "inc"
 let g:html_indent_script1 = "inc"
