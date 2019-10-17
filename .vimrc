@@ -8,9 +8,9 @@ set history=50		" keep 50 lines of command line history
 set ruler		   " show the cursor position all the time
 set showcmd		   " display incomplete commands
 set incsearch		" do incremental searching
-set tabstop=3
-set softtabstop=3
-set shiftwidth=3
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set number
 set autowrite
@@ -19,12 +19,22 @@ set smartindent
 set cindent
 set wrap!
 set termguicolors
+syntax on
+colorscheme koehler 
+" filetypes -------------------------------{{{
+filetype plugin on
+filetype indent on
+" }}}
+
+" Leader settings ------------------------{{{
+let mapleader = "\\"
+let maplocalleader = "\\"
+" }}}
+
 
 let g:html_indent_style1 = "inc"
 let g:html_indent_script1 = "inc"
 let g:html_indent_inctags = "style"
-
-let g:syntastic_python_checkers = ['prospector']
 
 if has ( "win32unix" ) 	
 	set shell=/bin/bash
@@ -95,16 +105,6 @@ function! SKEL_spec()
 	exe "%s/specRPM_CREATION_NAME/" . expand("%:t:r") . "/ge"
 	setf spec
 endfunction
-" }}}
-
-" filetypes -------------------------------{{{
-filetype plugin on
-filetype indent on
-" }}}
-
-" Leader settings ------------------------{{{
-let mapleader = "\\"
-let maplocalleader = "\\"
 " }}}
 
 " Convenience Mappings ----------------------{{{

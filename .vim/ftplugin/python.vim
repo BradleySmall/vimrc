@@ -11,7 +11,6 @@ setlocal softtabstop=4
 setlocal tabstop=4
 setlocal textwidth=79 
 setlocal colorcolumn=80
-syntax on
 
 imap <F5> <esc>:w<cr>:term python3 %<cr>
 nmap <F5> :w<cr>:term python3 %<cr> 
@@ -27,6 +26,7 @@ vnoremap <buffer> <localleader>cu :s/^#//<cr>
 
 " set foldmethod=indent
 let python_highlight_all=1
+let g:syntastic_python_checkers = ['flake8', 'frosted', 'mypy', 'pep257', 'pep8', 'prospector', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylint3', 'python3']
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
