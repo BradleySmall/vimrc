@@ -12,6 +12,10 @@ setlocal tabstop=4
 setlocal textwidth=79 
 setlocal colorcolumn=80
 
+let g:slime_target = "vimterminal"
+let g:slime_vimterminal_config = {"term_name":"REPL" , "vertical" : "1"}
+let g:slime_vimterminal_cmd = "python"
+
 imap <F5> <esc>:w<cr>:term python3 %<cr>
 nmap <F5> :w<cr>:term python3 %<cr> 
 

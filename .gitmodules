@@ -52,3 +52,6 @@
 [submodule ".vim/pack/plugins/start/tender"]
 	path = .vim/pack/plugins/start/tender
 	url = https://github.com/jacoborus/tender.vim.git
+[submodule ".vim/pack/plugins/start/vim-slime"]
+	path = .vim/pack/plugins/start/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
