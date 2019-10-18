@@ -41,6 +41,7 @@ On a working machine, to get updates:
 ```
 git pull
 git submodule update
+git submodule update --init --recursive
 ```
 
 instructions based on readme from : https://gist.github.com/keeganstreet/923900/13504e9b05cb131d55d8db817f093045b834d8de
