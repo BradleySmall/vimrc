@@ -16,11 +16,19 @@ let g:slime_target = "vimterminal"
 let g:slime_vimterminal_config = {"term_name":"REPL" , "vertical" : "1"}
 let g:slime_vimterminal_cmd = "python"
 
-imap <F5> <esc>:w<cr>:term python3 %<cr>
-nmap <F5> :w<cr>:term python3 %<cr> 
+" let g:slime_no_mappings = 1
+xmap <leader>s <Plug>SlimeRegionSend
+nmap <leader>s <Plug>SlimeMotionSend
+nmap <leader>ss <Plug>SlimeLineSend
 
-"imap <F5> <esc>:w<CR>:!clear;python3 %<CR>
-"nmap <F5> :w<CR>:!clear;python3 %<CR>
+nmap <f5> :w<cr>:SlimeSend0 "exec(open('" . expand('%:p') . "').read())\n"<CR>
+imap <f5> <esc>:w<cr>:SlimeSend0 "exec(open('" . expand('%:p') . "').read())\n"<CR>
+" imap <F5> <esc>:w<cr>:vert term python3 -i %<cr>
+" nmap <F5> :w<cr>:term python3 -i %<cr> 
+" imap <F5> <esc>:w<cr>:term python3 %<cr>
+" nmap <F5> :w<cr>:term python3 %<cr> 
+" imap <F5> <esc>:w<CR>:!clear;python3 %<CR>
+" nmap <F5> :w<CR>:!clear;python3 %<CR>
 nmap <F6> :w<CR>:!python3 % 
 nmap <F7> :w<CR>:SyntasticCheck<CR>
 
