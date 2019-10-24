@@ -55,3 +55,6 @@
 [submodule ".vim/pack/plugins/start/vim-slime"]
 	path = .vim/pack/plugins/start/vim-slime
 	url = https://github.com/jpalardy/vim-slime.git
+[submodule ".vim/pack/plugins/start/vim-vividchalk"]
+	path = .vim/pack/plugins/start/vim-vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
