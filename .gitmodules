@@ -58,3 +58,6 @@
 [submodule ".vim/pack/plugins/start/vim-vividchalk"]
 	path = .vim/pack/plugins/start/vim-vividchalk
 	url = https://github.com/tpope/vim-vividchalk.git
+[submodule ".vim/pack/plugins/start/jedi-vim"]
+	path = .vim/pack/plugins/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git

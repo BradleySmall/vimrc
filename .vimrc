@@ -171,6 +171,7 @@ augroup END
 
 " Python file settings ------------------------------{{{
 augroup filetype_python
+    setlocal omnifunc=pythoncomplete#Complete
     autocmd BufNewFile *.py 0r ~/.vim/skel/py.skel
 augroup END
 " }}}
