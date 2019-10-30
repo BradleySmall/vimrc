@@ -31,15 +31,9 @@
 [submodule ".vim/pack/plugins/start/vimwiki"]
 	path = .vim/pack/plugins/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
-[submodule ".vim/pack/plugins/start/indentpython"]
-	path = .vim/pack/plugins/start/indentpython
-	url = https://github.com/vim-scripts/indentpython.vim.git
 [submodule ".vim/pack/plugins/start/simplyfold"]
 	path = .vim/pack/plugins/start/simplyfold
 	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule ".vim/pack/plugins/start/syntastic"]
-	path = .vim/pack/plugins/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/pack/plugins/start/fugitive-gitlab"]
 	path = .vim/pack/plugins/start/fugitive-gitlab
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
@@ -64,3 +58,6 @@
 [submodule ".vim/pack/plugins/start/ropevim"]
 	path = .vim/pack/plugins/start/ropevim
 	url = https://github.com/python-rope/ropevim.git
+[submodule ".vim/pack/plugins/start/ale"]
+	path = .vim/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
