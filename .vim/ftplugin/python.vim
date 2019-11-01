@@ -14,7 +14,7 @@ setlocal colorcolumn=80
 
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_config = {"term_name":"REPL" , "vertical" : "1"}
-let g:slime_vimterminal_cmd = "python"
+let g:slime_vimterminal_cmd = "ipython"
 
 " let g:slime_no_mappings = 1
 xmap <leader>s <Plug>SlimeRegionSend
@@ -36,14 +36,23 @@ nnoremap <space> za
 vnoremap <buffer> <localleader>cc :s/^/#<cr>
 vnoremap <buffer> <localleader>cu :s/^#//<cr>
 
+let ropevim_vim_completion=1
+let ropevim_extended_complete=1
+let g:ropevim_autoimport_modules = ["os", "shutil"]
+setlocal omnifunc=RopeCompleteFunc
+let g:ropevim_prefer_py3=1
+let b:ropevim_prefer_py3=1
+
+
 " set foldmethod=indent
 let python_highlight_all=1
-" let g:syntastic_python_checkers = ['flake8', 'frosted', 'mypy', 'pep257', 'pep8', 'prospector', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylint3', 'python3']
 "
 " Check Python files with flake8 and pylint.
-let b:ale_linters = ['flake8', 'pylint', 'pyls']
-" Fix Python files with autopep8 and yapf.
-let b:ale_fixers = ['black', 'autopep8', 'yapf']
+let b:ale_linters = ['pyls', 'flake8', 'pylint', 'bandit', 'mypy', 'prospector', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'pyre', 'vulture']
+
+" Fix Python files black.
+let b:ale_fixers = ['black', 'isort', 'remove_trailing_lines', 'reorder-python-imports', 'trim_whitespace', 'add_blank_lines_for_python_control_statements']
+
 " Disable warnings about trailing whitespace for Python files.
 let b:ale_warn_about_trailing_whitespace = 0
 
@@ -58,3 +67,5 @@ autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 
 " Remove trailing whitespace 
 autocmd BufWritePre *.py,*.pyw %s/\s\+$//e
+
+
