@@ -55,12 +55,12 @@
 [submodule ".vim/pack/plugins/start/jedi-vim"]
 	path = .vim/pack/plugins/start/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
-[submodule ".vim/pack/plugins/start/ropevim"]
-	path = .vim/pack/plugins/start/ropevim
-	url = https://github.com/python-rope/ropevim.git
 [submodule ".vim/pack/plugins/start/ale"]
 	path = .vim/pack/plugins/start/ale
 	url = https://github.com/dense-analysis/ale.git
 [submodule ".vim/pack/plugins/start/ropemode"]
 	path = .vim/pack/plugins/start/ropemode
 	url = https://github.com/python-rope/ropemode.git
+[submodule ".vim/pack/plugins/start/ropevim"]
+	path = .vim/pack/plugins/start/ropevim
+	url = https://github.com/python-rope/ropevim.git
