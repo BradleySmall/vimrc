@@ -7,3 +7,5 @@
 .vim/swap
 .vim/undo
 .directory
+**.mypy_cache/
+**tags-te
