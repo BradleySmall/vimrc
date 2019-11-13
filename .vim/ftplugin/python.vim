@@ -51,7 +51,8 @@ let b:ropevim_prefer_py3=1
 let python_highlight_all=1
 "
 " Check Python files with flake8 and pylint.
-let b:ale_linters = ['pyls', 'flake8', 'pylint', 'bandit', 'mypy', 'prospector', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'pyre', 'vulture']
+let b:ale_linters = ['pyls']
+" , 'flake8', 'pylint', 'bandit', 'mypy', 'prospector', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'pyre', 'vulture']
 
 " Fix Python files black.
 let b:ale_fixers = ['black', 'isort', 'remove_trailing_lines', 'reorder-python-imports', 'trim_whitespace', 'add_blank_lines_for_python_control_statements']

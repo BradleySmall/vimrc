@@ -17,8 +17,20 @@ Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vividchalk'
 Plug 'vimwiki/vimwiki'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 "
 call plug#end()
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+
 " }}}
 
 " Configuration settings ------------------{{{
