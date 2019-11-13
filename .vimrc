@@ -1,6 +1,27 @@
 " ~/.vimrc (configuration file for vim only){{{
 " Configuration settings ------------------{{{}}}
 " allow backspacing over everything in insert mode
+" Plugged Plugins -------------------------{{{
+call plug#begin('~/.vim/plugged')
+"
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-scripts/loremipsum'
+Plug 'python-rope/ropemode'
+Plug 'python-rope/ropevim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'jacoborus/tender.vim'
+Plug 'tpope/vim-rhubarb'
+Plug 'jpalardy/vim-slime'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vividchalk'
+Plug 'vimwiki/vimwiki'
+"
+call plug#end()
+" }}}
+
 set backspace=indent,eol,start
 
 set backup		   " keep a backup file
@@ -48,16 +69,16 @@ let g:html_indent_style1 = "inc"
 let g:html_indent_script1 = "inc"
 let g:html_indent_inctags = "style"
 
-if has ( "win32unix" ) 	
-	set shell=/bin/bash
-	set shellcmdflag=--login\ -c
-elseif has ( "unix" )
-	set shell=/bin/bash
-	set shellcmdflag=--login\ -c
-	set path=.,,/usr/include,./inc,../inc,./include,../include,~/include,inc,include
-else
-	set shell=cmd.exe
-endif	
+"bms   if has ( "win32unix" ) 	
+"bms       set shell=/bin/bash
+"bms       set shellcmdflag=--login\ -c
+"bms   elseif has ( "unix" )
+"bms       set shell=/bin/bash
+"bms       set shellcmdflag=--login\ -c
+"bms       set path=.,,/usr/include,./inc,../inc,./include,../include,~/include,inc,include
+"bms   else
+"bms       set shell=cmd.exe
+"bms   endif
 	"#set shellxquote=\"
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -386,3 +407,5 @@ set list listchars=tab:»»,trail:•,precedes:←,extends:→,space:\ ,eol:¶
 
 set clipboard=unnamedplus,unnamed
 let g:fugitive_gitlab_domains = ['https://git.qoto.org']
+
+
