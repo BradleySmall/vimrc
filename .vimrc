@@ -3,9 +3,12 @@
 " Plugged Plugins -------------------------{{{
 call plug#begin('~/.vim/plugged')
 "
-Plug 'dense-analysis/ale'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
+" Plug 'dense-analysis/ale'
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 Plug 'jpalardy/vim-slime'
 
