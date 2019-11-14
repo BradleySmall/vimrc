@@ -4,32 +4,28 @@
 call plug#begin('~/.vim/plugged')
 "
 Plug 'dense-analysis/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'shumphrey/fugitive-gitlab.vim'
-Plug 'davidhalter/jedi-vim'
-Plug 'vim-scripts/loremipsum'
-Plug 'python-rope/ropemode'
-Plug 'python-rope/ropevim'
-Plug 'tmhedberg/SimpylFold'
-Plug 'jacoborus/tender.vim'
-Plug 'tpope/vim-rhubarb'
-Plug 'jpalardy/vim-slime'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vividchalk'
-Plug 'vimwiki/vimwiki'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+
+Plug 'jpalardy/vim-slime'
+
+Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tpope/vim-rhubarb'
+
+Plug 'vim-scripts/loremipsum'
+Plug 'tpope/vim-surround'
+
+" Plug 'tmhedberg/SimpylFold'
+" Plug 'vimwiki/vimwiki'
+" Plug 'python-rope/ropemode'
+" Plug 'python-rope/ropevim'
+" Plug 'davidhalter/jedi-vim'
+" Plug 'jacoborus/tender.vim'
+" Plug 'tpope/vim-vividchalk'
+" Plug 'natebosch/vim-lsc'
 "
 call plug#end()
-
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-
 
 " }}}
 
