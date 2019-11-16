@@ -1,7 +1,12 @@
 {
+  "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.prospectorEnabled": true,
   "python.linting.pydocstyleEnabled": true,
-  "python.linting.pylintEnabled": true,
-  "python.formatting.provider": "black"
+  "python.linting.pep8Enabled": true,
+  "python.linting.pylamaEnabled": true,
+  "python.linting.banditEnabled": true,
+  "python.linting.pylintEnabled": true
 }

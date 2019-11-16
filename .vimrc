@@ -18,6 +18,8 @@ Plug 'tpope/vim-rhubarb'
 
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vimwiki/vimwiki'
