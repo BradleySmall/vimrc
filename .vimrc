@@ -18,7 +18,7 @@ Plug 'tpope/vim-rhubarb'
 
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
-
+Plug 'altercation/vim-colors-solarized'
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vimwiki/vimwiki'
 " Plug 'python-rope/ropemode'
