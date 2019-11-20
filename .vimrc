@@ -1,3 +1,4 @@
+set background=light
 " ~/.vimrc (configuration file for vim only){{{
 " 
 " Plugged Plugins -------------------------{{{
@@ -18,7 +19,9 @@ Plug 'tpope/vim-rhubarb'
 
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
+
 Plug 'altercation/vim-colors-solarized'
+
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -66,7 +69,20 @@ filetype indent on
 syntax on
 syntax enable
 
-colorscheme koehler 
+" ------------------------------------------------------------------
+" Solarized Colorscheme Config
+" ------------------------------------------------------------------
+colorscheme solarized
+call togglebg#map("")
+if has('gui_running')
+    set background=light
+else
+   set background=dark
+endif
+" }}}
+
+
+" ------------------------------------------------------------------
 " }}}
 
 " swap file stuff --------------------------------------------------{{{
@@ -123,16 +139,6 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
-
-"if has('gui_running')
-"    set background=light
-"else
-"   let g:solarized_termcolors=16
-"   set background=light
-"endif
-"set background=dark
-"colorscheme solarized
-" }}}
 
 " Leader settings ------------------------{{{
 let mapleader = "\\"
@@ -430,3 +436,5 @@ nnoremap <F8> :call UpdateTags()
 " Fugitive gitlab setting --------------------------------- {{{
 let g:fugitive_gitlab_domains = ['https://git.qoto.org']
 " }}}
+
+
