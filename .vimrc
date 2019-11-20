@@ -70,16 +70,32 @@ syntax on
 syntax enable
 
 " ------------------------------------------------------------------
-" Solarized Colorscheme Config
+" Solarized8 Colorscheme Config
 " ------------------------------------------------------------------
-colorscheme solarized8
+colorscheme solarized8_high
+let g:solarized_diffmode = "normal"
+let g:solarized_enable_extra_hi_groups = 0
+let g:solarized_italics = 1
+let g:solarized_old_cursor_style = 0
+let g:solarized_statusline = "normal"
+let g:solarized_termtrans = 0
+let g:solarized_visibility = "normal"
+
 " call togglebg#map("")
 if has('gui_running')
-    set background=light
+    set background=dark
 else
-    set background=light
-    " set background=dark
+    set background=dark
 endif
+
+function! TogBG()
+    if (&background=='dark')
+        set background=light
+    else
+        set background=dark
+    endif
+endfunction
+
 " }}}
 
 
