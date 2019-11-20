@@ -1,4 +1,3 @@
-set background=light
 " ~/.vimrc (configuration file for vim only){{{
 " 
 " Plugged Plugins -------------------------{{{
@@ -20,7 +19,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
 
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -72,12 +72,13 @@ syntax enable
 " ------------------------------------------------------------------
 " Solarized Colorscheme Config
 " ------------------------------------------------------------------
-colorscheme solarized
-call togglebg#map("")
+colorscheme solarized8
+" call togglebg#map("")
 if has('gui_running')
     set background=light
 else
-   set background=dark
+    set background=light
+    " set background=dark
 endif
 " }}}
 
