@@ -18,6 +18,10 @@ Plug 'tpope/vim-rhubarb'
 
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
+
+" Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jceb/vim-orgmode'
@@ -65,7 +69,21 @@ filetype indent on
 syntax on
 syntax enable
 
-colorscheme koehler 
+" ------------------------------------------------------------------
+" Solarized Colorscheme Config
+" ------------------------------------------------------------------
+colorscheme solarized8
+" call togglebg#map("")
+if has('gui_running')
+    set background=light
+else
+    set background=light
+    " set background=dark
+endif
+" }}}
+
+
+" ------------------------------------------------------------------
 " }}}
 
 " swap file stuff --------------------------------------------------{{{
@@ -122,16 +140,6 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
-
-"if has('gui_running')
-"    set background=light
-"else
-"   let g:solarized_termcolors=16
-"   set background=light
-"endif
-"set background=dark
-"colorscheme solarized
-" }}}
 
 " Leader settings ------------------------{{{
 let mapleader = "\\"
@@ -428,4 +436,12 @@ nnoremap <F8> :call UpdateTags()
 
 " Fugitive gitlab setting --------------------------------- {{{
 let g:fugitive_gitlab_domains = ['https://git.qoto.org']
+
+" Use vimdiff as merge tool
+"     git mergetool
+" git config merge.tool vimdiff
+" git config merge.conflictstyle diff3
+" git config mergetool.prompt false
 " }}}
+
+
