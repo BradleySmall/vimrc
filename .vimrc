@@ -435,6 +435,12 @@ nnoremap <F8> :call UpdateTags()
 
 " Fugitive gitlab setting --------------------------------- {{{
 let g:fugitive_gitlab_domains = ['https://git.qoto.org']
+
+" Use vimdiff as merge tool
+"     git mergetool
+" git config merge.tool vimdiff
+" git config merge.conflictstyle diff3
+" git config mergetool.prompt false
 " }}}
 
 
