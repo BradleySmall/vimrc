@@ -20,7 +20,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
+Plug 'jceb/vim-orgmode'
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vimwiki/vimwiki'
 " Plug 'python-rope/ropemode'
