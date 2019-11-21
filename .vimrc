@@ -1,5 +1,5 @@
 " ~/.vimrc (configuration file for vim only){{{
-" 
+"
 " Plugged Plugins -------------------------{{{
 call plug#begin('~/.vim/plugged')
 "
@@ -68,7 +68,7 @@ filetype indent on
 syntax on
 syntax enable
 
-" ------------------------------------------------------------------
+" -----------------------------------------------------------------{{{
 " Solarized8 Colorscheme Config
 " ------------------------------------------------------------------
 colorscheme solarized8_high
@@ -94,14 +94,7 @@ function! TogBG()
     endif
 endfunction
 
-" if &diff
-"     colorscheme default
-"     syntax off
-"     hi DiffAdd      gui=none    guifg=NONE          guibg=#bada9f
-"     hi DiffChange   gui=none    guifg=NONE          guibg=#e5d5ac
-"     hi DiffDelete   gui=bold    guifg=#ff8080       guibg=#ffb0b0
-"     hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
-" end
+command TogBG call TogBG()
 
 if &diff
     set background=light
@@ -116,9 +109,6 @@ if &diff
     augroup END
 endif
 " }}}
-
-
-" ------------------------------------------------------------------
 " }}}
 
 " swap file stuff --------------------------------------------------{{{
@@ -175,6 +165,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+" }}}
 
 " Leader settings ------------------------{{{
 let mapleader = "\\"
