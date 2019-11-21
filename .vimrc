@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-
 Plug 'jpalardy/vim-slime'
 
 Plug 'tpope/vim-fugitive'
@@ -51,6 +50,7 @@ set history=50      " keep 50 lines of command line history
 set hlsearch
 set incsearch       " do incremental searching
 set number
+set relativenumber
 set ruler           " show the cursor position all the time
 set shiftwidth=4
 set showcmd         " display incomplete commands
@@ -73,7 +73,7 @@ syntax enable
 " Solarized8 Colorscheme Config
 " ------------------------------------------------------------------
 colorscheme solarized8_high
-let g:solarized_diffmode = "normal"
+let g:solarized_diffmode = "high"
 let g:solarized_enable_extra_hi_groups = 0
 let g:solarized_italics = 1
 let g:solarized_old_cursor_style = 0
@@ -96,6 +96,27 @@ function! TogBG()
     endif
 endfunction
 
+" if &diff
+"     colorscheme default
+"     syntax off
+"     hi DiffAdd      gui=none    guifg=NONE          guibg=#bada9f
+"     hi DiffChange   gui=none    guifg=NONE          guibg=#e5d5ac
+"     hi DiffDelete   gui=bold    guifg=#ff8080       guibg=#ffb0b0
+"     hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
+" end
+
+if &diff
+    set background=light
+    if has('syntax')
+        set nocursorline
+        syntax off
+    endif
+    set norelativenumber
+    augroup VimrcVimdiff
+        autocmd!
+        autocmd VimResized * wincmd =
+    augroup END
+endif
 " }}}
 
 
