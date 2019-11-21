@@ -18,7 +18,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
 
-" Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 
 Plug 'scrooloose/nerdtree'
@@ -81,7 +80,6 @@ let g:solarized_statusline = "normal"
 let g:solarized_termtrans = 0
 let g:solarized_visibility = "normal"
 
-" call togglebg#map("")
 if has('gui_running')
     set background=dark
 else
