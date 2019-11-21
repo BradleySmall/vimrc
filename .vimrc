@@ -95,7 +95,7 @@ function! TogBG()
         set background=dark
     endif
 endfunction
-
+command TogBG  call TogBG()
 " }}}
 
 
@@ -156,6 +156,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+" ---------------------------------------------}}}
 
 " Leader settings ------------------------{{{
 let mapleader = "\\"
@@ -459,5 +460,4 @@ let g:fugitive_gitlab_domains = ['https://git.qoto.org']
 " git config merge.conflictstyle diff3
 " git config mergetool.prompt false
 " }}}
-
 
