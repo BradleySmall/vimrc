@@ -6,21 +6,35 @@ call plug#begin('~/.vim/plugged')
 " Plug 'dense-analysis/ale'
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/vim-lsp'
-
+"       test for plugin loaded 
+" has_key(plugs, 'vim-surround')
+" has_key(plugs, 'fugitive-gitlab.vim')
+" has_key(plugs, 'nerdtree-git-plugin')
+" has_key(plugs, 'nerdtree')
+" has_key(plugs, 'vim-solarized8')
+" has_key(plugs, 'vim-slime')
+" has_key(plugs, 'vim-orgmode')
+" has_key(plugs, 'vim-rhubarb')
+" has_key(plugs, 'vim-fugitive')
+" has_key(plugs, 'loremipsum')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+" ? did_coc_loaded
 Plug 'jpalardy/vim-slime'
-
+" loaded_slime
 Plug 'tpope/vim-fugitive'
+" loaded_fugitive
 Plug 'shumphrey/fugitive-gitlab.vim'
+" loaded_fugitive_gitlab
 Plug 'tpope/vim-rhubarb'
-
+" loaded_rhubarb
 Plug 'vim-scripts/loremipsum'
+" loaded_loremipsum
 Plug 'tpope/vim-surround'
-
+" loaded_surround
 Plug 'lifepillar/vim-solarized8'
 
 Plug 'scrooloose/nerdtree'
+" loaded_nerd_tree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jceb/vim-orgmode'
 " Plug 'tmhedberg/SimpylFold'
