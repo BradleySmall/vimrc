@@ -1,5 +1,5 @@
 " ~/.vimrc (configuration file for vim only){{{
-" 
+"
 " Plugged Plugins -------------------------{{{
 call plug#begin('~/.vim/plugged')
 "
@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 " Plug 'prabirshrestha/vim-lsp'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 
 Plug 'jpalardy/vim-slime'
 
@@ -19,7 +18,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-surround'
 
-" Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 
 Plug 'scrooloose/nerdtree'
@@ -51,6 +49,7 @@ set history=50      " keep 50 lines of command line history
 set hlsearch
 set incsearch       " do incremental searching
 set number
+set relativenumber
 set ruler           " show the cursor position all the time
 set shiftwidth=4
 set showcmd         " display incomplete commands
@@ -69,11 +68,11 @@ filetype indent on
 syntax on
 syntax enable
 
-" ------------------------------------------------------------------
+" -----------------------------------------------------------------{{{
 " Solarized8 Colorscheme Config
 " ------------------------------------------------------------------
 colorscheme solarized8_high
-let g:solarized_diffmode = "normal"
+let g:solarized_diffmode = "high"
 let g:solarized_enable_extra_hi_groups = 0
 let g:solarized_italics = 1
 let g:solarized_old_cursor_style = 0
@@ -81,7 +80,6 @@ let g:solarized_statusline = "normal"
 let g:solarized_termtrans = 0
 let g:solarized_visibility = "normal"
 
-" call togglebg#map("")
 if has('gui_running')
     set background=dark
 else
@@ -95,11 +93,22 @@ function! TogBG()
         set background=dark
     endif
 endfunction
-command TogBG  call TogBG()
+
+command TogBG call TogBG()
+
+if &diff
+    set background=light
+    if has('syntax')
+        set nocursorline
+        syntax off
+    endif
+    set norelativenumber
+    augroup VimrcVimdiff
+        autocmd!
+        autocmd VimResized * wincmd =
+    augroup END
+endif
 " }}}
-
-
-" ------------------------------------------------------------------
 " }}}
 
 " swap file stuff --------------------------------------------------{{{
@@ -156,7 +165,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
-" ---------------------------------------------}}}
+" }}}
 
 " Leader settings ------------------------{{{
 let mapleader = "\\"
