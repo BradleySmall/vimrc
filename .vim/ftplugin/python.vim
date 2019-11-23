@@ -1,4 +1,5 @@
 " Python specific settings.
+" --- Config ---{{{
 setlocal colorcolumn=80
 setlocal encoding=utf-8 
 setlocal fileformat=unix 
@@ -6,9 +7,27 @@ setlocal foldlevel=99
 setlocal foldmethod=indent 
 setlocal formatoptions=croql
 setlocal textwidth=79 
+nnoremap <space> za
+vnoremap <buffer> <localleader>cc :s/^/#<cr>
+vnoremap <buffer> <localleader>cu :s/^#//<cr>
+" set foldmethod=indent
+let python_highlight_all=1
+" Use the below highlight group when displaying bad whitespace is desired.
+highlight BadWhitespace ctermbg=red guibg=red
 
-" Coc recomended settings ------------------ {{{
+" Display tabs at the beginning of a line in Python mode as bad.
+autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+
+" Make trailing whitespace be flagged as bad.
+autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
+
+" Remove trailing whitespace 
+autocmd BufWritePre *.py,*.pyw %s/\s\+$//e
+" }}}
+
+" --- Coc recomended settings --- {{{
 " if hidden is not set, TextEdit might fail.
+if has_key(plugs,'coc.nvim')
 set hidden
 
 " Some servers have issues with backup files, see #649
@@ -136,8 +155,11 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-" }}}
+endif
+"za }}}
 
+"--- vim-slime --- {{{
+if has_key(plugs,'vim-slime)'
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_config = {"term_name":"REPL" , "vertical" : "1"}
 let g:slime_vimterminal_cmd = "ipython"
@@ -159,18 +181,21 @@ imap <s-f5> <c-o>:%SlimeSend<CR>
 " imap <F5> <esc>:w<CR>:!clear;python3 %<CR>
 " nmap <F5> :w<CR>:!clear;python3 %<CR>
 " nmap <F6> :w<CR>:!python3 % 
+endif
+" }}}
 
-nnoremap <space> za
-vnoremap <buffer> <localleader>cc :s/^/#<cr>
-vnoremap <buffer> <localleader>cu :s/^#//<cr>
-
+"--- Rope --- {{{
+if has_key(plugs, 'ropevim')
 " let ropevim_vim_completion=1
 " let ropevim_extended_complete=1
 " let g:ropevim_autoimport_modules = ["os", "shutil"]
 " setlocal omnifunc=RopeCompleteFunc
 " let g:ropevim_prefer_py3=1
 " let b:ropevim_prefer_py3=1
+endif
+" }}}
 
+" --- Pyls --- {{{
 " if executable('pyls')
 "     au User lsp_setup call lsp#register_server({
 "         \ 'name': 'pyls',
@@ -178,7 +203,10 @@ vnoremap <buffer> <localleader>cu :s/^#//<cr>
 "         \ 'whitelist': ['python'],
 "         \ })
 " endif
+" }}}
 
+" --- vim-lsc --- {{{
+if has_key(plugs, 'vim-lsc')
 "     lsc   let g:lsc_server_commands = {
 "     lsc    \  'python': {
 "     lsc    \    'command': 'pyls',
@@ -197,10 +225,11 @@ vnoremap <buffer> <localleader>cu :s/^#//<cr>
 "     lsc   let g:lsc_enable_diagnostics   = v:false
 "     lsc   let g:lsc_reference_highlights = v:false
 "     lsc   let g:lsc_trace_level          = 'off'
+endif
+: }}}
 
-" set foldmethod=indent
-let python_highlight_all=1
-"
+" --- ALE --- {{{
+if has_key(plugs,'ale')
 " " Check Python files with flake8 and pylint.
 " let b:ale_linters = ['pyls', 'flake8', 'pylint', 'pycodestyle', 'pydocstyle', 'bandit', 'mypy', 'prospector', 'pyflakes', 'pylama', 'pyre', 'vulture']
 " 
@@ -209,17 +238,6 @@ let python_highlight_all=1
 " 
 " " Disable warnings about trailing whitespace for Python files.
 " let b:ale_warn_about_trailing_whitespace = 0
-
-" Use the below highlight group when displaying bad whitespace is desired.
-highlight BadWhitespace ctermbg=red guibg=red
-
-" Display tabs at the beginning of a line in Python mode as bad.
-autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-
-" Make trailing whitespace be flagged as bad.
-autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
-
-" Remove trailing whitespace 
-autocmd BufWritePre *.py,*.pyw %s/\s\+$//e
-
+endif
+" }}}
 

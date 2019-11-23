@@ -1,6 +1,6 @@
 " ~/.vimrc (configuration file for vim only){{{
 "
-" Plugged Plugins -------------------------{{{
+" Plugged Plugins --- {{{
 call plug#begin('~/.vim/plugged')
 "
 " Plug 'dense-analysis/ale'
@@ -50,7 +50,7 @@ call plug#end()
 
 " }}}
 
-" Configuration settings ------------------{{{
+" Configuration settings --- {{{
 "
 " allow backspacing over everything in insert mode
 set autoindent      " always set autoindenting on
@@ -81,10 +81,13 @@ filetype indent on
 
 syntax on
 syntax enable
+" }}}
 
 " -----------------------------------------------------------------{{{
 " Solarized8 Colorscheme Config
 " ------------------------------------------------------------------
+" --- solarized8 --- {{{
+if has_key(plugs, 'vim-solarized8')
 colorscheme solarized8_high
 let g:solarized_diffmode = "high"
 let g:solarized_enable_extra_hi_groups = 0
@@ -121,6 +124,7 @@ if &diff
         autocmd!
         autocmd VimResized * wincmd =
     augroup END
+endif
 endif
 " }}}
 " }}}
