@@ -156,10 +156,10 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 endif
-"za }}}
+" }}}
 
 "--- vim-slime --- {{{
-if has_key(plugs,'vim-slime)'
+if has_key(plugs,'vim-slime')
 let g:slime_target = "vimterminal"
 let g:slime_vimterminal_config = {"term_name":"REPL" , "vertical" : "1"}
 let g:slime_vimterminal_cmd = "ipython"
@@ -226,7 +226,7 @@ if has_key(plugs, 'vim-lsc')
 "     lsc   let g:lsc_reference_highlights = v:false
 "     lsc   let g:lsc_trace_level          = 'off'
 endif
-: }}}
+" }}}
 
 " --- ALE --- {{{
 if has_key(plugs,'ale')
