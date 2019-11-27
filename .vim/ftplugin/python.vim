@@ -186,12 +186,14 @@ endif
 
 "--- Rope --- {{{
 if has_key(plugs, 'ropevim')
+let g:ropevim_autoimport_modules = ["os", "shutil"]
+let g:ropevim_guess_project = 1
+let g:ropevim_goto_def_newwin = 'vnew'
 " let ropevim_vim_completion=1
 " let ropevim_extended_complete=1
-" let g:ropevim_autoimport_modules = ["os", "shutil"]
 " setlocal omnifunc=RopeCompleteFunc
-" let g:ropevim_prefer_py3=1
-" let b:ropevim_prefer_py3=1
+let g:ropevim_prefer_py3=1
+let b:ropevim_prefer_py3=1
 endif
 " }}}
 

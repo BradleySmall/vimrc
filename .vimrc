@@ -40,7 +40,7 @@ Plug 'jceb/vim-orgmode'
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vimwiki/vimwiki'
 " Plug 'python-rope/ropemode'
-" Plug 'python-rope/ropevim'
+Plug 'python-rope/ropevim'
 " Plug 'davidhalter/jedi-vim'
 " Plug 'jacoborus/tender.vim'
 " Plug 'tpope/vim-vividchalk'
@@ -484,3 +484,4 @@ let g:fugitive_gitlab_domains = ['https://git.qoto.org']
 " git config mergetool.prompt false
 " }}}
 
+source  /usr/share/vim/vim81/ftplugin/man.vim
