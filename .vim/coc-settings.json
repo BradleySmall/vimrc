@@ -4,10 +4,10 @@
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.mypyEnabled": true,
-  "python.linting.prospectorEnabled": true,
+  "python.linting.prospectorEnabled": false,
   "python.linting.pydocstyleEnabled": true,
-  "python.linting.pep8Enabled": true,
-  "python.linting.pylamaEnabled": true,
-  "python.linting.banditEnabled": true,
-  "python.linting.pylintEnabled": true
+  "python.linting.pep8Enabled": false,
+  "python.linting.pylamaEnabled": false,
+  "python.linting.banditEnabled": false,
+  "python.linting.pylintEnabled": false
 }
