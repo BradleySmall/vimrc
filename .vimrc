@@ -45,7 +45,10 @@ Plug 'python-rope/ropevim'
 " Plug 'jacoborus/tender.vim'
 " Plug 'tpope/vim-vividchalk'
 " Plug 'natebosch/vim-lsc'
-"
+Plug 'janko/vim-test'
+" has_key(plugs, 'vim-test')
+Plug '5long/pytest-vim-compiler'
+Plug 'reinh/vim-makegreen'
 call plug#end()
 
 " }}}
