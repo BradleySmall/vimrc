@@ -33,9 +33,9 @@ Plug 'tpope/vim-surround'
 " loaded_surround
 Plug 'lifepillar/vim-solarized8'
 
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 " loaded_nerd_tree
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jceb/vim-orgmode'
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vimwiki/vimwiki'
